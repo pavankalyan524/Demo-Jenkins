@@ -11,7 +11,7 @@ pipeline{
         stage("Deploying to ec2"){
             steps{
                 
-                sshagent(['publickey']){
+                sshagent(['privatekey']){
 
                     sh '''
                     ssh -o StrictHostKeyChecking=no ubuntu@54.167.25.250 << EOF
