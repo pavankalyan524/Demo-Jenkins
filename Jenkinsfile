@@ -14,8 +14,11 @@ pipeline{
                 sshagent(['privatekey']){
 
                     sh '''
-                    ssh -o StrictHostKeyChecking=no ubuntu@54.167.25.250 << EOF
-                        cd /home/ubuntu/
+                    ssh -o StrictHostKeyChecking=no ubuntu@54.167.25.250 <<EOF
+			if [ ! -d "/home/ubuntu/Demo-Jenkins/.git" ]; then 
+			   git clone https://github.com/pavankalyan524/Demo-Jenkins /home/ubuntu/
+ 			fi
+			cd /home/ubuntu/Demo-Jenkins/
                         git pull origin main
                     EOF
                     '''
