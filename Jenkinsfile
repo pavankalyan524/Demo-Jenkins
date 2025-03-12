@@ -12,6 +12,5 @@ pipeline{
                 echo "Code Checkout Successful"
             }
         }
-        }
     }
 }
