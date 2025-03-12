@@ -16,7 +16,7 @@ pipeline{
                     sh '''
                     ssh -o StrictHostKeyChecking=no ubuntu@54.167.25.250 <<EOF
 			if [ ! -d "/home/ubuntu/Demo-Jenkins/.git" ]; then 
-			   git clone git@github.com:pavankalyan524/Demo-Jenkins.git /home/ubuntu/
+			   git clone git@github.com:pavankalyan524/Demo-Jenkins.git /home/ubuntu/Demo-Jenkins
  			fi
 			cd /home/ubuntu/Demo-Jenkins/
                         git pull origin main
